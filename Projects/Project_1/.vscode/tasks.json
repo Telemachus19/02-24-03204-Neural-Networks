@@ -1,0 +1,27 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "MD to PDF",
+            "type": "shell",
+            "command": "pandoc -s -f markdown -t pdf --highlight-style tango -N  ${relativeFile} -o ${relativeFileDirname}/${fileBasenameNoExtension}.pdf",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "GFM to PDF",
+            "type": "shell",
+            "command": "pandoc -s -f gfm -t pdf --highlight-style tango -N  ${relativeFile} -o ${relativeFileDirname}/${fileBasenameNoExtension}.pdf",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
